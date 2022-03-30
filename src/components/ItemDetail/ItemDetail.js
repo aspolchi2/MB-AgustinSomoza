@@ -30,9 +30,12 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
             <div className='detail'>
             <h2 className='detailName'>{name}</h2>
             <p>{desc}</p>
-            <p>{price}</p>
+            
             <p>Stock disponible: {stock}</p>
+            <div className='priceBuy'>
+            <p>{price}</p>
             <ItemCount stock={stock} initial={initial} OnAdd={AddToCart} />
+            </div>
             </div>
         </div>
     )
