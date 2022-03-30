@@ -7,7 +7,7 @@
 @import './components/NavBar/NavBar.css';
 
 :root{
-  --color-detail : #E4A9BB;
+  --color-detail : #e4a9bbbf;
 }
 
 .App {

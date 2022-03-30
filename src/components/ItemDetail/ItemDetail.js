@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-import { Card } from 'react-bootstrap'
 
 
 const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
@@ -26,7 +25,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
     return (
         <div className='ItemDetail'>
             <div className='item'> 
-            <img src={img}/>
+            <img src={img} alt={name}/>
             </div>
             <div className='detail'>
             <h2 className='detailName'>{name}</h2>
