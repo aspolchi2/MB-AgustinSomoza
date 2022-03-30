@@ -1,0 +1,7 @@
+.infoColor{
+    color: var(--color-detail);
+}
+
+.card{
+    border: none;
+}

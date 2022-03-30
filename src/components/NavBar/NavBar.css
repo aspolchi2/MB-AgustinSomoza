@@ -1,0 +1,7 @@
+.container{
+    display: flex;
+    justify-content: flex-end;
+}
+.navbar-collapse{
+    flex-grow: 0;
+}

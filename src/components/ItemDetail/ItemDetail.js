@@ -8,6 +8,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
 
 
 
+
     const AddToCart = () => {
         const itemToAdd = {
             id,
@@ -19,21 +20,21 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
             initial,
         }
         console.log(itemToAdd);
+
     }
     console.log(id);
     return (
         <div className='ItemDetail'>
-            <Card className="bg-dark text-dark">
-                <Card.Img src={img} alt="Card image" />
-                <Card.ImgOverlay>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>
-                        {desc} {price} 
-                    </Card.Text>
-                    <Card.Text>Quedan {stock} en Stock</Card.Text>
-                </Card.ImgOverlay>
-            </Card>
+            <div className='item'> 
+            <img src={img}/>
+            </div>
+            <div className='detail'>
+            <h2 className='detailName'>{name}</h2>
+            <p>{desc}</p>
+            <p>{price}</p>
+            <p>Stock disponible: {stock}</p>
             <ItemCount stock={stock} initial={initial} OnAdd={AddToCart} />
+            </div>
         </div>
     )
 }

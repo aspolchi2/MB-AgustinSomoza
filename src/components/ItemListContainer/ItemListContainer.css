@@ -4,3 +4,6 @@
     margin: auto;
     width: 100%;
 }
+.row{
+    gap: 30px;
+}
