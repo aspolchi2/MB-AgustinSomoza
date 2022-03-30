@@ -1,3 +1,7 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import './components/ItemCount/ItemCount.css';
+@import './components/ItemDetail/ItemDetail.css';
+@import './components/ItemListContainer/ItemListContainer.css';
 .App {
   text-align: center;
 }

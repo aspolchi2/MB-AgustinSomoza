@@ -1,0 +1,43 @@
+.ItemCount{
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    background: var(--background-color);
+    
+   
+}
+
+
+.counter{
+    border: none;
+    background-color: transparent;
+    width: 3rem;
+
+}
+
+.wrong{
+    color: red;
+    animation: forwards .9s wrongAnimation  ;
+    position: relative;
+}
+@keyframes wrongAnimation {
+    0%{
+        transform: translate(-5px);
+    }
+    20%{
+        transform: translate(5px)
+    }
+    60%{
+        transform: translate(-5px)
+    }
+    100%{
+        transform: translate(0);
+        
+    }
+
+    
+}
