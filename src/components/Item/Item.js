@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount'
 
 export const Item = ({ id, name, price, desc, img, stock, initial, category }) => {
     const AddToCart = () => {
@@ -26,10 +25,9 @@ export const Item = ({ id, name, price, desc, img, stock, initial, category }) =
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
-                    {price} <p>Stock disponible :{stock}</p>
+                    {price}
                 </Card.Text>
                
-                <ItemCount stock={stock} initial={initial} OnAdd={AddToCart} />
             </Card.Body>
         </Card>
 

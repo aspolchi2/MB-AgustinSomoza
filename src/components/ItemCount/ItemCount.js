@@ -4,7 +4,7 @@ import { useState } from "react"
 
 
 const ItemCount = ({ stock, OnAdd }) => {
-    const initial = 1
+    const initial = 0
     const [count, setCount] = useState(initial)
     
     const MaxStock = useRef()
