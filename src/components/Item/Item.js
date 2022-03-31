@@ -29,7 +29,6 @@ export const Item = ({ id, name, price, desc, img, stock, initial, category }) =
                     {price} <p>Stock disponible :{stock}</p>
                 </Card.Text>
                
-                <ItemCount stock={stock} initial={initial} OnAdd={AddToCart} />
             </Card.Body>
         </Card>
 
