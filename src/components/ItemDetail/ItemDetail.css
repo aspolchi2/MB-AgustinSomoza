@@ -19,7 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
+  padding: 1.5vw;
   text-align: center;
 }
 
@@ -32,7 +32,21 @@
 }
 .priceBuy p {
     margin: auto;
-    padding-right: 3rem;
+    padding-right: 1vw;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 2vw;
+}
+
+@media screen and (max-width: 992px) {
+  .ItemDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+.detail{
+  width: 60%;
+  margin-bottom: 20px;
+}
+
 }
