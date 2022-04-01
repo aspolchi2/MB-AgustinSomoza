@@ -1,13 +1,11 @@
-import { stock } from '../data/stock'
+import { stock } from "../data/stock";
 
 const GetStock = () => {
-
   return new Promise((resolve, reject) => {
-      setTimeout(() => {
-          resolve(stock)
-        }, 1000)
-    })
+    setTimeout(() => {
+      resolve(stock);
+    }, 1000);
+  });
+};
 
-}
-
-export default GetStock
+export default GetStock;
