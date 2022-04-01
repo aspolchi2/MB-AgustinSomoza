@@ -1,9 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import GetStock from '../../helpers/GetStock'
 import ItemCount from '../ItemCount/ItemCount'
 
 
 const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
+    const [isLoading, setIsLoading] = useState(false)
 
+    useEffect(() => {
+
+        setIsLoading(true)
+        GetStock().then(stock => {
+            setIsLoading(false) 
+        })
+    }, [])
 
 
 
@@ -23,6 +32,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
     }
     console.log(id);
     return (
+        isLoading ? <div>Loading...</div> :
         <div className='ItemDetail'>
             <div className='item'> 
             <img src={img} alt={name} className='img-fluid'/>
@@ -38,6 +48,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
             </div>
             </div>
         </div>
+    
     )
 }
 
