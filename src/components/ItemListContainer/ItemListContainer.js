@@ -13,13 +13,15 @@ const ItemListContainer = () => {
       .then((res) => {
         if (catId) {
           setProducts(res.filter((prod) => prod.category === catId));
+        
         } else {
           setProducts(res);
         }
       })
       .catch((err) => {
         console.log(err);
-      });
+      
+      })
   }, [catId]);
   return (
     <div className="ItemListContainer">
