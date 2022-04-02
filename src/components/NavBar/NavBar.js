@@ -4,6 +4,7 @@ import CartWidget from '../CartWidget/CartWidget'
 import { LinkContainer } from 'react-router-bootstrap'
 
 const NavBar = () => {
+
   return (
     <Navbar className='navBar' bg="light" expand="lg">
   <Container>

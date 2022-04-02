@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import GetStock from "../../helpers/GetStock";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { Spinner } from "react-bootstrap";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
@@ -16,7 +17,9 @@ const ItemDetailContainer = () => {
       .finally(() => setIsLoading(false));
   }, [itemId]);
 
-  return isLoading ? <div>Loading</div> : <ItemDetail {...item} />;
+  return isLoading ? <div className="loading"><Spinner animation="border" role="status">
+  <span className="visually-hidden">Loading...</span>
+</Spinner></div> : <ItemDetail {...item} />;
 };
 
 export default ItemDetailContainer;
