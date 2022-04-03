@@ -1,0 +1,76 @@
+.buttonGlobal {
+  width: 9em;
+  height: 3em;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: inherit;
+  border: 1px #f9f047 solid;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.25s ease-in-out;
+  background-color: white;
+
+}
+.buttonGlobal:hover {
+  box-shadow: 1px 1px 3px #c5c5c5, -1px -1px 3px #ffffff;
+  border: none;
+
+
+}
+
+.buttonGlobal::before {
+  content: "";
+  width: 0;
+  height: 3em;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to right,
+    var(--color-detail) 60%,
+    #f9f047 100%
+  );
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.buttonGlobal:hover::before {
+  width: 9em;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.buttonGlobalRed {
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.buttonGlobalRed:hover {
+  box-shadow: 1px 1px 3px #c5c5c5, -1px -1px 3px #ffffff;
+}
+
+.buttonGlobalRed::before {
+  content: "";
+  width: 0;
+  height: 3em;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #d80f0f 0%, #f95347 100%);
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+
+.buttonGlobalRed:hover::before {
+  width: 9em;
+}

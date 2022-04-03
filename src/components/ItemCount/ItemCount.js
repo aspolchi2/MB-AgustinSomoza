@@ -33,6 +33,7 @@ const ItemCount = ({ stock, OnAdd, count, setCount }) => {
       <button className="counter" onClick={() => less()}>
         -
       </button>
+      
       <button className="counter" onClick={OnAdd}>
         Buy
       </button>

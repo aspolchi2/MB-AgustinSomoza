@@ -21,7 +21,7 @@ export const Item = ({  id,  name,  price,  desc,  img,  stock,  initial,  categ
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>
-          {price}
+          ${price}
           <p>Stock disponible :{stock}</p>
         </Card.Text>
       </Card.Body>

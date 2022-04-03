@@ -1,0 +1,9 @@
+.vaciarCarrito{
+    width: 7vw;
+    height: 5vh;
+}
+.cart {
+    display: flex;
+    justify-content: center;
+    
+}

@@ -11,14 +11,14 @@ export const CartProvider = ({ children }) => {
     return cart.some((item) => item.id === id);
   };
   const cartQuantity = () => {
-    return cart.reduce((acc, product) => (acc += product.quantity), 0);
+    return cart.reduce((acc, item) => acc += item.count, 0);
   };
   const removeItem = (id) => {
-    setCart(cart.filter((prod) => prod.id !== id));
+    setCart(cart.filter((item) => item.id !== id));
   };
   const cartTotal = () => {
     return cart.reduce(
-      (acc, product) => (acc += product.price * product.quantity),
+      (acc, product) => (acc += product.price * product.count),
       0
     );
   };

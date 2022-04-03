@@ -5,6 +5,8 @@
 @import './components/Item/Item.css';
 @import './components/CartWidget/CartWidget.css';
 @import './components/NavBar/NavBar.css';
+@import './components/Cart/Cart.css';
+@import './helpers/button.css';
 
 :root{
   --color-detail : #e4a9bbbf;
