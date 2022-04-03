@@ -1,11 +1,7 @@
 import React, { useRef } from "react";
 
-import { useState } from "react";
-
-const ItemCount = ({ stock, OnAdd }) => {
+const ItemCount = ({ stock, OnAdd, count, setCount }) => {
   const initial = 1;
-  const [count, setCount] = useState(initial);
-
   const MaxStock = useRef();
 
   const more = () => {
@@ -25,12 +21,6 @@ const ItemCount = ({ stock, OnAdd }) => {
       setCount(initial);
     }
   };
-  const addToCart = () => {
-    if (stock > 0 && count > 0) {
-      const StockLeft = stock - count;
-      OnAdd(count, StockLeft);
-    }
-  };
 
   return (
     <div className="ItemCount">
@@ -43,7 +33,7 @@ const ItemCount = ({ stock, OnAdd }) => {
       <button className="counter" onClick={() => less()}>
         -
       </button>
-      <button className="counter" onClick={() => addToCart()}>
+      <button className="counter" onClick={OnAdd}>
         Buy
       </button>
     </div>

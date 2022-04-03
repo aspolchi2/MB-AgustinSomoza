@@ -1,30 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
 
-export const Item = ({
-  id,
-  name,
-  price,
-  desc,
-  img,
-  stock,
-  initial,
-  category,
-}) => {
-  const AddToCart = () => {
-    const itemToAdd = {
-      id,
-      name,
-      price,
-      stock,
-      img,
-      desc,
-      initial,
-    };
-    console.log(itemToAdd);
-  };
+export const Item = ({  id,  name,  price,  desc,  img,  stock,  initial,  category}) => {
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src={img} />
