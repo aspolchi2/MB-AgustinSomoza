@@ -9,7 +9,7 @@ const NavBar = () => {
     <Navbar className='navBar' bg="light" expand="lg">
   <Container>
     <LinkContainer to="/">
-    <Navbar.Brand href="/">Mussbags</Navbar.Brand>
+    <Navbar.Brand href="/">Müssbags</Navbar.Brand>
     </LinkContainer>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

@@ -11,7 +11,8 @@ export const CartProvider = ({ children }) => {
     return cart.some((item) => item.id === id);
   };
   const cartQuantity = () => {
-    return cart.reduce((acc, item) => acc += item.count, 0);
+  return  cart.reduce((acc, item) => acc += item.count, '');
+    
   };
   const removeItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));

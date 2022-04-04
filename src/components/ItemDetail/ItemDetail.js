@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import ButtonGoCart from "../../helpers/Button/ButtonGoCart";
 
 const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
   const { addItem, isInCart } = useContext(CartContext);
@@ -41,9 +42,10 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
               setCount={setCount}
             />
           ) : (
-            <Link to={`/cart`}><button className="buttonGlobal">Ir al carrito</button> </Link>
+            <Link to={`/cart`}>
+              <ButtonGoCart text={'Go to cart'} className={'hover-underline-animation'}/>
+            </Link>
           )}
-          
         </div>
       </div>
     </div>

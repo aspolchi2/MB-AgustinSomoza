@@ -7,9 +7,17 @@
 @import './components/NavBar/NavBar.css';
 @import './components/Cart/Cart.css';
 @import './helpers/button.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 :root{
   --color-detail : #e4a9bbbf;
+  width: 100vw;
+  overflow-x: hidden;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+/* font-family: 'Roboto Slab', serif; */
 }
 
 .App {

@@ -5,7 +5,7 @@ import { CartContext } from "../../context/CartContext";
 
 const CartWidget = () => {
   const { cartQuantity } = useContext(CartContext);
-  console.log(cartQuantity());
+
   return (
     <LinkContainer to="/cart">
     <li className="nav-item">
