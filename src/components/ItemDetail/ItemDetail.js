@@ -43,7 +43,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
             />
           ) : (
             <Link to={`/cart`}>
-              <ButtonGoCart text={'Go to cart'} className={'hover-underline-animation'}/>
+              <ButtonGoCart text={'Go to cart'} />
             </Link>
           )}
         </div>

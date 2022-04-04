@@ -13,8 +13,8 @@ const Cart = () => {
     <div className="row cart">
       <h2>Resumen de tu carrito</h2>
       <hr></hr>
-      {cart.map((item) => (
-        <Card style={{ width: "15rem" }}>
+      {cart.map((item, id) => (
+        <Card style={{ width: "15rem" }} key={item.id}>
           <Card.Img variant="top" src={item.img} />
           <Card.Body>
             <Card.Title>{item.name}</Card.Title>
@@ -29,8 +29,7 @@ const Cart = () => {
           <Card.Body>
             <ButtonGoCart
               text={"Eliminar"}
-              onClic={() => removeItem(item.id)}
-              className={"hover-underline-animation"}
+              onClick={() => removeItem(item.id)}
             />
           </Card.Body>
         </Card>
@@ -40,11 +39,11 @@ const Cart = () => {
         <p>
           Tu carrito esta vacio{" "}
           <Link to={"/"}>
-            <ButtonGoCart text={"Ir a la tienda"} className={'hover-underline-animation'} />
+            <ButtonGoCart text={"Ir a la tienda"} />
           </Link>
         </p>
       ) : (
-        <ButtonGoCart text={"Vaciar Carrito"} onClic={emptyCart} className={'hover-underline-animation textAlign'}/>
+        <ButtonGoCart text={"Vaciar Carrito"} onClick={emptyCart}  fixed={'textAlign'}/>
       )}
     </div>
   );

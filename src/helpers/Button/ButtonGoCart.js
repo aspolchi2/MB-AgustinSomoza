@@ -1,12 +1,13 @@
-import React from 'react'
-import { CartContext } from '../../context/CartContext'
-import { useContext } from 'react'
+import React from "react";
 
-const ButtonGoCart = ({text, onClic, className}) => {
+const ButtonGoCart = ({ text, onClick, fixed }) => {
   return (
-      <div>
-    <button className="cta" type="button" onClick={onClic}><span className={className}>{text}</span></button></div>
-  )
-}
+    <div className={fixed}>
+      <button className="cta" type="button" onClick={onClick}>
+        <span className='hover-underline-animation'>{text}</span>
+      </button>
+    </div>
+  );
+};
 
-export default ButtonGoCart
+export default ButtonGoCart;

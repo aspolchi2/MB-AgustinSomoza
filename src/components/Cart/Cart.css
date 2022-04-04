@@ -8,6 +8,5 @@
     
 }
 .textAlign{
-    position: fixed;
-    left: 10px;
+    text-align: right;
 }
