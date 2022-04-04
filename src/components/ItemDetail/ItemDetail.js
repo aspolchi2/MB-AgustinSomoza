@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import ButtonGoCart from "../../helpers/Button/ButtonGoCart";
+import Button from "../../helpers/Button/Button";
 
 const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
   const { addItem, isInCart } = useContext(CartContext);
@@ -43,7 +43,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
             />
           ) : (
             <Link to={`/cart`}>
-              <ButtonGoCart text={'Go to cart'} />
+              <Button text={'Go to cart'} />
             </Link>
           )}
         </div>

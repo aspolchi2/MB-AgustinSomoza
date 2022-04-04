@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import ButtonGoCart from "../../helpers/Button/ButtonGoCart";
+import Button from "../../helpers/Button/Button";
 
 const Cart = () => {
   const { cart, cartTotal, cartQuantity, emptyCart, removeItem } =
@@ -27,7 +27,7 @@ const Cart = () => {
             </ListGroupItem>
           </ListGroup>
           <Card.Body>
-            <ButtonGoCart
+            <Button
               text={"Eliminar"}
               onClick={() => removeItem(item.id)}
             />
@@ -36,14 +36,19 @@ const Cart = () => {
       ))}
 
       {cart.length === 0 ? (
+        <div className="cartIsEmpty">
         <p>
-          Tu carrito esta vacio{" "}
+          Tu carrito esta vacio{" "}</p>
           <Link to={"/"}>
-            <ButtonGoCart text={"Ir a la tienda"} />
+            <Button text={"Ir a la tienda"} />
           </Link>
-        </p>
+          </div>
       ) : (
-        <ButtonGoCart text={"Vaciar Carrito"} onClick={emptyCart}  fixed={'textAlign'}/>
+        <Button
+          text={"Vaciar Carrito"}
+          onClick={emptyCart}
+          fixed={"textAlign"}
+        />
       )}
     </div>
   );
