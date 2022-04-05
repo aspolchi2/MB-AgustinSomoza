@@ -1,16 +1,22 @@
 .vaciarCarrito{
     width: 7vw;
     height: 5vh;
+
 }
 .cart {
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    padding-top: 56px;
     
 }
 .textAlign{
     text-align: right;
+    margin-right: 15px;
+   
+   
 }
 .cartIsEmpty{
     text-align: center;
     font-size: 3rem;
+    padding-top: 56px ;
 }

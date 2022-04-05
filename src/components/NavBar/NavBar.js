@@ -6,10 +6,10 @@ import { LinkContainer } from 'react-router-bootstrap'
 const NavBar = () => {
 
   return (
-    <Navbar className='navBar' bg="light" expand="lg">
+    <Navbar className='navBar' bg="light" expand="lg" fixed='top'>
   <Container>
     <LinkContainer to="/">
-    <Navbar.Brand href="/">Müssbags</Navbar.Brand>
+    <Navbar.Brand >Müssbags</Navbar.Brand>
     </LinkContainer>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

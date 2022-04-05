@@ -1,62 +1,36 @@
-.ItemDetail {
+.ItemDetail{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: auto;
+  padding-top: 56px;
+}
+.ItemDetail .item{
+  width: 70vw;
   display: flex;
   justify-content: center;
-}
-.item {
-  height: 100%;
-}
-.item img {
-  height: 90vh;
+
 }
 
-.detail {
-  background-color: var(--color-detail);
-  width: 25vw;
-  height: 40vh;
-  align-self: center;
-  border-radius: 10px;
+.detail{
+  border: 1px rgba(128, 128, 128, 0.579) solid;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5vw;
+  justify-content: start;
+  align-items:stretch;
+  padding: 3rem;
+  width: 25vw;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+
+
+}
+
+.detail .detailPrice{
+  font-size: 3vw;
+}
+.keepShopping{
   text-align: center;
-}
-
-.priceBuy{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: auto;
-}
-.priceBuy p {
-    margin: auto;
-    padding-right: 1vw;
-    font-weight: 600;
-    font-size: 2vw;
-}
-
-@media screen and (max-width: 992px) {
-  .ItemDetail{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-.detail{
-  width: 60%;
-  margin-bottom: 20px;
-}
-
-
-}
-.goCart{
-  background-color: white;
-  border: 1px grey solid;
-  width: 10vw;
-  border-radius: 5px;
-}
-.goCart:hover{
-  background-color: rgb(223, 223, 223);
+  padding-top: 10vh;
 }

@@ -1,18 +1,7 @@
-.ItemCount{
-    border: 1px solid gray;
-    border-radius: 10px;
+
+.count {
     width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
-    font-size: 1.5vw;
-    background: white;
-    
-    
-   
 }
-
-
 .counter{
     border: none;
     background-color: transparent;

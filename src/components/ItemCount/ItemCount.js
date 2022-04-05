@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import MyButton from "../../helpers/Button/Button";
 
 const ItemCount = ({ stock, OnAdd, count, setCount }) => {
   const initial = 1;
@@ -24,6 +25,7 @@ const ItemCount = ({ stock, OnAdd, count, setCount }) => {
 
   return (
     <div className="ItemCount">
+      <div className="count">
       <button className="counter" onClick={() => more()}>
         +
       </button>
@@ -33,10 +35,9 @@ const ItemCount = ({ stock, OnAdd, count, setCount }) => {
       <button className="counter" onClick={() => less()}>
         -
       </button>
+      </div>
       
-      <button className="counter" onClick={OnAdd}>
-        Buy
-      </button>
+      <MyButton text={"Agregar al carrito"} onClick={() => OnAdd()} />
     </div>
   );
 };

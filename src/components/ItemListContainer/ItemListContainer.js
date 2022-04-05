@@ -3,15 +3,11 @@ import { useParams } from "react-router-dom";
 import GetStock from "../../helpers/GetStock";
 import ItemList from "../ItemList/ItemList";
 import { Spinner } from "react-bootstrap";
-import { CartContext } from "../../context/CartContext";
 
-
-const ItemListContainer = () => {
+const ItemListContainer = ({ testing }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { catId } = useParams();
-  const context = useContext(CartContext)
-
   useEffect(() => {
     setIsLoading(true);
     GetStock()
@@ -26,10 +22,11 @@ const ItemListContainer = () => {
         console.log(err);
       })
       .finally(() => setIsLoading(false));
-  }, [catId]);
+      }, [catId]);
   return isLoading ? (
-    <div className="loading"><Spinner animation="border" role="status">
-  </Spinner></div>
+    <div className="loading">
+      <Spinner animation="border" role="status"></Spinner>
+    </div>
   ) : (
     <div className="ItemListContainer">
       <ItemList products={products} />
