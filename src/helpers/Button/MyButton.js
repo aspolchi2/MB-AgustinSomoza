@@ -1,13 +1,13 @@
 import React from "react";
 
-const Button = ({ text, onClick, fixed }) => {
+const MyButton = ({ text, onClick, fixed, addClass }) => {
   return (
     <div className={fixed}>
       <button className="cta" type="button" onClick={onClick}>
-        <span className="hover-underline-animation">{text}</span>
+        <span className={`hover-underline-animation ${addClass}`}>{text}</span>
       </button>
     </div>
   );
 };
 
-export default Button;
+export default MyButton;

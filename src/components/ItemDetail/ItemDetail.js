@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import Button from "../../helpers/Button/Button";
+import MyButton from "../../helpers/Button/MyButton";
 
 const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
   const { addItem, isInCart } = useContext(CartContext);
@@ -31,7 +31,8 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
         <h2 className="detailName">{name}</h2>
         <p>{desc}</p>
 
-        <p>Stock disponible: {stock}</p>
+        <p>Stock disponible:  {stock}</p>
+        {stock <= 1 && <p>¡Último disponible!</p>}
         <div className="priceBuy">
           <p>${price}</p>
           {!isInCart(id) ? (
@@ -43,7 +44,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial }) => {
             />
           ) : (
             <Link to={`/cart`}>
-              <Button text={'Go to cart'} />
+              <MyButton text={'Go to cart'} />
             </Link>
           )}
         </div>

@@ -13,7 +13,7 @@ export const stock = [
     id: 2,
     name: "Verbena negro",
     price: 4400,
-    stock: 3,
+    stock: 1,
     img: "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/425/627/products/52c169e8-61bd-4624-a1cf-ef68084ddd241-691e726214ca8a7ba116369953715349-640-0.png",
     desc: "Cartera de lona rígida Bolsillo interno. Medidas 31cm x 31cm x 10cm",
     initial: 1,
