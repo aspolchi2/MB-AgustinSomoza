@@ -8,7 +8,18 @@ import Button from "../../helpers/Button/Button";
 const Cart = () => {
   const { cart, cartTotal, cartQuantity, emptyCart, removeItem } =
     useContext(CartContext);
-  console.log(cart);
+
+    if(cart.length === 0){
+        return(
+          <div className="cartIsEmpty">
+        <p>
+          Tu carrito esta vacio{" "}</p>
+          <Link to={"/"}>
+            <Button text={"Ir a la tienda"} />
+          </Link>
+          </div>)
+    }
+  
   return (
     <div className="row cart">
       <h2>Resumen de tu carrito</h2>
@@ -34,22 +45,12 @@ const Cart = () => {
           </Card.Body>
         </Card>
       ))}
-
-      {cart.length === 0 ? (
-        <div className="cartIsEmpty">
-        <p>
-          Tu carrito esta vacio{" "}</p>
-          <Link to={"/"}>
-            <Button text={"Ir a la tienda"} />
-          </Link>
-          </div>
-      ) : (
         <Button
           text={"Vaciar Carrito"}
           onClick={emptyCart}
           fixed={"textAlign"}
         />
-      )}
+     
     </div>
   );
 };
