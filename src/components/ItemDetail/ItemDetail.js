@@ -27,7 +27,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial, imgDescUrl }) 
     <>
       <div className="ItemDetail">
         <div className="item">
-          <img src={imgDescUrl || img} alt={name} />
+          <img src={imgDescUrl} alt={name} />
         </div>
         <div className="detail">
           <h2 className="detailName">{name}</h2>
