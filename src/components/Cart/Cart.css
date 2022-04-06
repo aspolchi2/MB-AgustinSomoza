@@ -20,3 +20,31 @@
     font-size: 3rem;
     padding-top: 56px ;
 }
+.cartCard{
+    display: flex;
+    height: 20vh;
+    
+}
+.cardHeader img{
+    height: 20vh;
+    border-radius: 5px;
+    border: 1px rgb(211, 211, 211) solid;
+    
+
+}
+.cardHeader{
+    margin: 1rem;
+}
+
+.cardMain > h3{
+    font-size: 1.2vw;
+
+}
+.cardMain p{
+    line-height: 1rem;
+}
+.cardMain{
+    margin: 1rem;
+}
+
+
