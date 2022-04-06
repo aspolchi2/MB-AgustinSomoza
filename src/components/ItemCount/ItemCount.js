@@ -1,11 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import MyButton from "../../helpers/Button/Button";
 
-const ItemCount = ({ stock, OnAdd, count, setCount }) => {
+
+const ItemCount = ({ stock, OnAdd }) => {
   const initial = 1;
+  const [count, setCount] = useState(initial);
+
   const MaxStock = useRef();
 
-  const more = () => {
+
+  const handleAdd = () => {
     setCount(count + 1);
     if (count >= stock) {
       MaxStock.current.classList.add("wrong");
@@ -26,7 +30,7 @@ const ItemCount = ({ stock, OnAdd, count, setCount }) => {
   return (
     <div className="ItemCount">
       <div className="count">
-      <button className="counter" onClick={() => more()}>
+      <button className="counter" onClick={() => handleAdd()}>
         +
       </button>
       <span ref={MaxStock} className="spanCount">
@@ -37,7 +41,7 @@ const ItemCount = ({ stock, OnAdd, count, setCount }) => {
       </button>
       </div>
       
-      <MyButton text={"Agregar al carrito"} onClick={() => OnAdd()} />
+      <MyButton text={"Agregar al carrito"} onClick={() => OnAdd(count)} />
     </div>
   );
 };

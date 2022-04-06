@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, {  useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
@@ -9,8 +9,8 @@ import { Price } from "../../helpers/Price";
 
 const ItemDetail = ({ id, name, price, stock, img, desc, initial, imgDescUrl }) => {
   const { addItem, isInCart } = useContext(CartContext);
-  const [count, setCount] = useState(initial);
-  const addToCart = () => {
+ 
+  const addToCart = (count) => {
     const itemToAdd = {
       id,
       name,
@@ -18,7 +18,7 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial, imgDescUrl }) 
       stock,
       img,
       desc,
-      count,
+      count
     };
     addItem(itemToAdd);
   };
@@ -38,8 +38,6 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial, imgDescUrl }) 
               <ItemCount
                 stock={stock}
                 OnAdd={addToCart}
-                count={count}
-                setCount={setCount}
               />
             ) : (
               <Link to={`/cart`}>
