@@ -6,7 +6,7 @@ import Button from "../../helpers/Button/Button";
 import { Price } from "../../helpers/Price";
 
 const Cart = () => {
-  const { cart, cartTotal, cartQuantity, emptyCart, removeItem } =
+  const { cart, cartTotal, emptyCart, removeItem } =
     useContext(CartContext);
 
   if (cart.length === 0) {
@@ -26,7 +26,7 @@ const Cart = () => {
       {cart.map((item) => (
         <article className="cartCard">
           <header className="cardHeader">
-            <img src={item.img} className="img-fluid"></img>
+            <img src={item.img} className="img-fluid" alt={item.desc}></img>
           </header>
           <main className="cardMain">
             <h3>
