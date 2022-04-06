@@ -7,7 +7,7 @@ import { Price } from "../../helpers/Price";
 export const Item = ({  id,  name,  price,  desc,  img,  stock,  initial,  category}) => {
   return (
     <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={img} />
+      <Card.Img variant="top" src={img} className="img-fluid"/>
       <Link to={`/detail/${id}`}>
         <Button text={'Ver detalles'} />
       </Link>

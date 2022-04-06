@@ -26,7 +26,7 @@ const Cart = () => {
       {cart.map((item) => (
         <article className="cartCard">
           <header className="cardHeader">
-            <img src={item.img} className="asd"></img>
+            <img src={item.img} className="img-fluid"></img>
           </header>
           <main className="cardMain">
             <h3>
