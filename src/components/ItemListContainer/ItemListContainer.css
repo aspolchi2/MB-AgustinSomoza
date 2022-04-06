@@ -1,12 +1,13 @@
 .ItemListContainer{
     display:flex;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: auto;
     width: 100%;
     padding-top: 56px;
 }
 .row{
     gap: 30px;
+    justify-content: center;
 }
 
 .loading{

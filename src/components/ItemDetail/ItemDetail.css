@@ -34,3 +34,19 @@
   text-align: center;
   padding-top: 10vh;
 }
+@media screen and (max-width: 600px) {
+  .ItemDetail{
+    display: flex;
+    flex-direction: column;
+  }
+  .ItemDetail .item{
+    width: 100%;
+  }
+  .detail{
+    width: 100%;
+  }
+  .keepShopping{
+    padding-top: 1rem;
+  }
+
+}
