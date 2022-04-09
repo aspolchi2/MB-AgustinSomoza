@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import GetStock from "../../helpers/GetStock";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
+import { db } from "../../firebase/Config";
+import { doc, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const { itemId } = useParams();
   useEffect(() => {
-    GetStock()
-      .then((res) => {
-        setItem(res.find((prod) => prod.id === Number(itemId)));
-      })
-      .catch((err) => console.log(err))
+   const docRef = doc(db, "productos", itemId)
+   getDoc(docRef)
+   .then((doc) => {
+     setItem({id: doc.id, ...doc.data()})
+   })
       .finally(() => setIsLoading(false));
   }, [itemId]);
 

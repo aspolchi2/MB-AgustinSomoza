@@ -4,4 +4,28 @@
 
 .card{
     border: none;
+    border-radius: 50px;
+}
+.lastStock{
+    color: red;
+    font-size: 0.8rem;
+    padding: 0;
+    animation-name: blink;
+    animation-duration: 0.725s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
 }

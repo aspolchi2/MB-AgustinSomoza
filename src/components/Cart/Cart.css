@@ -7,6 +7,8 @@
     display: flex;
     justify-content: start;
     padding-top: 56px;
+    width: 60%;
+    margin: auto;
     
 }
 .textAlign{
@@ -80,6 +82,7 @@
         flex-direction: column;
         padding-top: 0px;
         justify-content: center;
+        
     }
     .textAlign{
         text-align: center;

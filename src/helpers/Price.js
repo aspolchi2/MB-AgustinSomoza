@@ -5,6 +5,6 @@ export const Price = ({amount, className, text}) => {
 
     const formatAmount = formatCurrency(amount);
   return (
-    <p className={`detailPrice ${className}`}>{text} {formatAmount}</p>
+    <span className={`detailPrice ${className}`}>{text} {formatAmount}</span>
   )
 }

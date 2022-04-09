@@ -15,7 +15,7 @@ const ItemCount = ({ stock, OnAdd }) => {
       MaxStock.current.classList.add("wrong");
       setTimeout(function () {
         MaxStock.current.classList.remove("wrong");
-      }, 1000);
+      }, 0.5 * 1000);
       setCount(stock);
     }
   };

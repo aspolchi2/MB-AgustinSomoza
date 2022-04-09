@@ -1,31 +1,38 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import GetStock from "../../helpers/GetStock";
 import ItemList from "../ItemList/ItemList";
 import { Spinner } from "react-bootstrap";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase/Config";
 
-const ItemListContainer = ({ testing }) => {
+const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { catId } = useParams();
+
   useEffect(() => {
     setIsLoading(true);
-    GetStock()
-      .then((res) => {
-        if (catId) {
-          setProducts(res.filter((prod) => prod.category === catId));
-        } else {
-          setProducts(res);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
+    const productosRef = collection(db, "productos");
+    //deberia haber puesto "products" en el firebase
+    const q = catId
+      ? query(productosRef, where("category", "==", catId))
+      : productosRef;
+    getDocs(q)
+      .then((resp) => {
+        setProducts(
+          resp.docs.map((doc) => {
+            return {
+              id: doc.id,
+              ...doc.data(),
+            };
+          })
+        );
       })
       .finally(() => setIsLoading(false));
-      }, [catId]);
+  }, [catId]);
   return isLoading ? (
     <div className="loading">
-      <Spinner animation="border" role="status"></Spinner>
+      <Spinner animation="border" />
     </div>
   ) : (
     <div className="ItemListContainer">

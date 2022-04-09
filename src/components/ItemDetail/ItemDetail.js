@@ -1,4 +1,4 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
@@ -6,10 +6,18 @@ import Button from "../../helpers/Button/Button";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import { Price } from "../../helpers/Price";
 
-
-const ItemDetail = ({ id, name, price, stock, img, desc, initial, imgDescUrl }) => {
+const ItemDetail = ({
+  id,
+  name,
+  price,
+  stock,
+  img,
+  desc,
+  initial,
+  imgDescUrl,
+}) => {
   const { addItem, isInCart } = useContext(CartContext);
- 
+
   const addToCart = (count) => {
     const itemToAdd = {
       id,
@@ -18,11 +26,10 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial, imgDescUrl }) 
       stock,
       img,
       desc,
-      count
+      count,
     };
     addItem(itemToAdd);
   };
-  console.log(imgDescUrl);
   return (
     <>
       <div className="ItemDetail">
@@ -32,13 +39,12 @@ const ItemDetail = ({ id, name, price, stock, img, desc, initial, imgDescUrl }) 
         <div className="detail">
           <h2 className="detailName">{name}</h2>
           <Price amount={price} />
-          <p>Stock disponible: {stock}</p>
+
+          {stock === 1 ? <p className="lastStock">Ultimo en stock </p>: <p> Stock disponible: {stock}</p>}
+
           <div className="priceBuy">
             {!isInCart(id) ? (
-              <ItemCount
-                stock={stock}
-                OnAdd={addToCart}
-              />
+              <ItemCount stock={stock} OnAdd={addToCart} />
             ) : (
               <Link to={`/cart`}>
                 <Button text={"Ir al carrito"} />
