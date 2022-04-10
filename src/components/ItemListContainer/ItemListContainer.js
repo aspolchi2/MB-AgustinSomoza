@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import { Spinner } from "react-bootstrap";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "../../firebase/Config";
+import { db } from "../../firebase/config";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);

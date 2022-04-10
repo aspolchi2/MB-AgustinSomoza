@@ -38,6 +38,8 @@ const ItemDetail = ({
         </div>
         <div className="detail">
           <h2 className="detailName">{name}</h2>
+            <p>{desc}</p>
+            <hr />
           <Price amount={price} />
 
           {stock === 1 ? <p className="lastStock">Ultimo en stock </p>: <p> Stock disponible: {stock}</p>}
@@ -50,8 +52,6 @@ const ItemDetail = ({
                 <Button text={"Ir al carrito"} />
               </Link>
             )}
-            <hr />
-            <p>{desc}</p>
           </div>
         </div>
       </div>

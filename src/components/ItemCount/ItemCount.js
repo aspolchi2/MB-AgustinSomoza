@@ -39,9 +39,9 @@ const ItemCount = ({ stock, OnAdd }) => {
       <button className="counter" onClick={() => less()}>
         -
       </button>
+      <MyButton text={"Agregar al carrito"} onClick={() => OnAdd(count)} className={"addToCartText"} fixed={"addToCartPosition"}/>
       </div>
       
-      <MyButton text={"Agregar al carrito"} onClick={() => OnAdd(count)} />
     </div>
   );
 };

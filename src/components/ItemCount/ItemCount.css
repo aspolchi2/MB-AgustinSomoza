@@ -16,3 +16,12 @@
     animation-iteration-count: infinite;
 }
 
+.addToCartText{
+    font-size: 1vw !important;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    
+}
+.addToCartPosition{
+    margin-top: 1rem;
+}
