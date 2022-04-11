@@ -62,3 +62,4 @@ export const fileUpload = async (fileName) => {
     return await uploadPromise
 
 }
+export default fileUpload;

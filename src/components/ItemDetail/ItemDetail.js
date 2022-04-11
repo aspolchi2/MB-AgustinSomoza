@@ -13,8 +13,8 @@ const ItemDetail = ({
   stock,
   img,
   desc,
-  initial,
   imgDescUrl,
+  category,
 }) => {
   const { addItem, isInCart } = useContext(CartContext);
 
@@ -38,11 +38,15 @@ const ItemDetail = ({
         </div>
         <div className="detail">
           <h2 className="detailName">{name}</h2>
-            <p>{desc}</p>
-            <hr />
+          <p>{desc}</p>
+          <hr />
           <Price amount={price} />
 
-          {stock === 1 ? <p className="lastStock">Ultimo en stock </p>: <p> Stock disponible: {stock}</p>}
+          {stock === 1 ? (
+            <p className="lastStock">Ultimo en stock </p>
+          ) : (
+            <p className="stockDisponible"> Stock disponible: {stock}</p>
+          )}
 
           <div className="priceBuy">
             {!isInCart(id) ? (
@@ -56,8 +60,8 @@ const ItemDetail = ({
         </div>
       </div>
       <div>
-        <h2 className="keepShopping">Segui comprando</h2>
-        <ItemListContainer />
+        <h2 className="keepShopping">Productos relacionados</h2>
+        <ItemListContainer category={category} />
       </div>
     </>
   );

@@ -14,11 +14,17 @@ const NavBar = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto myNav">
-        <LinkContainer to={`/category/carteras`}>
-        <Nav.Link >Carteras</Nav.Link>
+        <LinkContainer to={`/category/minibags`}>
+        <Nav.Link >Minibags</Nav.Link>
         </LinkContainer>
         <LinkContainer to={`/category/bolsos`}>
         <Nav.Link >Bolsos</Nav.Link>
+        </LinkContainer>
+        <LinkContainer to={`/category/bandoleras`}>
+        <Nav.Link >Bandoleras</Nav.Link>
+        </LinkContainer>
+        <LinkContainer to={`/category/cluchs`}>
+        <Nav.Link >Cluchs</Nav.Link>
         </LinkContainer>
         <CartWidget/>
       </Nav>

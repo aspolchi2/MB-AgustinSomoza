@@ -5,7 +5,7 @@ import { Spinner } from "react-bootstrap";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
-const ItemListContainer = () => {
+const ItemListContainer = ({category}) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const { catId } = useParams();
@@ -14,8 +14,9 @@ const ItemListContainer = () => {
     setIsLoading(true);
     const productosRef = collection(db, "productos");
     //deberia haber puesto "products" en el firebase
-    const q = catId
-      ? query(productosRef, where("category", "==", catId))
+    const getCategory = category ? category : catId;
+    const q = getCategory
+      ? query(productosRef, where("category", "==", getCategory))
       : productosRef;
     getDocs(q)
       .then((resp) => {

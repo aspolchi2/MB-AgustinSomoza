@@ -25,3 +25,13 @@
 .addToCartPosition{
     margin-top: 1rem;
 }
+
+@media screen and (max-width: 1440px) {
+    .addToCartPosition{
+        margin-top: 0rem;
+    }
+    .addToCartText{
+        font-size: 0.8vw !important;
+    }
+    
+}

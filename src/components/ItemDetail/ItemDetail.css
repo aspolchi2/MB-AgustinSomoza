@@ -11,6 +11,9 @@
   justify-content: center;
 
 }
+.stockDisponible{
+  font-size: calc(1vw - 1px);
+}
 
 .detail{
   border: 1px rgba(128, 128, 128, 0.579) solid;

@@ -8,7 +8,6 @@ import Cart from "./components/Cart/Cart";
 import { stock } from "./data/stock";
 import { db } from "./firebase/config";
 import { addDoc, collection } from "firebase/firestore";
-import { async } from "@firebase/util";
 import { fileUpload } from "./firebase/fileUpload";
 
 function App() {
@@ -30,7 +29,7 @@ function App() {
           <Route path="/category/:catId" element={<ItemListContainer />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-        <button onClick={uploadCaracters}>Upload</button>
+        {/* <button onClick={uploadCaracters}>Upload</button> */}
       </BrowserRouter>
     </CartProvider>
   );
