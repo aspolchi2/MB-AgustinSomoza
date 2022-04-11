@@ -23,8 +23,8 @@ const Cart = () => {
   return (
     <div className="row cart">
       <h2>Resumen de tu carrito</h2>
-      {cart.map((item) => (
-        <article className="cartCard">
+      {cart.map((item, id) => (
+        <article className="cartCard" key={id}>
           <header className="cardHeader">
             <img src={item.img} className="img-fluid" alt={item.desc}></img>
           </header>

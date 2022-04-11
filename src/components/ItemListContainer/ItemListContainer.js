@@ -12,9 +12,11 @@ const ItemListContainer = ({category}) => {
 
   useEffect(() => {
     setIsLoading(true);
-    const productosRef = collection(db, "productos");
     //deberia haber puesto "products" en el firebase
+    const productosRef = collection(db, "productos");
+    // creo una const si recibe una categoria o usa el parametro de la url
     const getCategory = category ? category : catId;
+
     const q = getCategory
       ? query(productosRef, where("category", "==", getCategory))
       : productosRef;

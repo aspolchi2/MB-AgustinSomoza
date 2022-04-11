@@ -9,6 +9,7 @@ import { stock } from "./data/stock";
 import { db } from "./firebase/config";
 import { addDoc, collection } from "firebase/firestore";
 import { fileUpload } from "./firebase/fileUpload";
+import Cover from "./components/Cover/Cover";
 
 function App() {
   const uploadCaracters = () => {
@@ -24,7 +25,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/" element={<Cover />} />
           <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
           <Route path="/category/:catId" element={<ItemListContainer />} />
           <Route path="/cart" element={<Cart />} />

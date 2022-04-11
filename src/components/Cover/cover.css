@@ -1,0 +1,21 @@
+.cover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  gap: 2rem;
+  margin-top: 56px;
+}
+.section {
+  width: 25%;
+}
+.coverCard {
+  filter: grayscale(100%)
+        brightness(0.9);
+  transition: all 0.5 ease-in-out;
+}
+.coverCard:hover {
+  filter: grayscale(0%)
+   brightness(1);
+}
