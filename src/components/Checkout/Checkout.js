@@ -49,9 +49,9 @@ const Checkout = () => {
         }
         updateDoc(docRef, {
           stock: doc.data().stock - element.count,
-        });
-      });
-    });
+        })
+      })
+    })
     addDoc(orderRef, order).then((doc) => {
       console.log(doc.id);
       setOrderId(doc.id);
