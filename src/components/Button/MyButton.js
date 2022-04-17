@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Button = ({ text, onClick, fixed, className }) => {
+const MyButton = ({ text, onClick, fixed, className, place}) => {
   return (
     <div className={fixed}>
+    
       <button className="cta" type="button" onClick={onClick}>
         <span className={`hover-underline-animation ${className}`}>{text}</span>
       </button>
+      
     </div>
   );
 };
 
-export default Button;
+export default MyButton;

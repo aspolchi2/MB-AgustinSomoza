@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import Button from "../../helpers/Button/Button";
+import MyButton from "../Button/MyButton";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import { Price } from "../../helpers/Price";
+import ButtonPrimery from "../Button/ButtonPrimary";
 
 const ItemDetail = ({
   id,
@@ -53,7 +54,7 @@ const ItemDetail = ({
               <ItemCount stock={stock} OnAdd={addToCart} />
             ) : (
               <Link to={`/cart`}>
-                <Button text={"Ir al carrito"} />
+                <ButtonPrimery text="Ver carrito" />
               </Link>
             )}
           </div>

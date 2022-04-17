@@ -1,12 +1,20 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { db } from "../../firebase/config";
-import { collection, addDoc, Timestamp, doc, updateDoc, getDoc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  Timestamp,
+  doc,
+  updateDoc,
+  getDoc,
+} from "firebase/firestore";
 import { Navigate } from "react-router";
+import ButtonPrimary from "../Button/ButtonPrimary";
 
 const Checkout = () => {
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
-  const { orderId, setOrderId } = useState(null);
+  const [ orderId, setOrderId ] = useState(null);
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -14,8 +22,6 @@ const Checkout = () => {
   });
 
   const handleInputChange = (e) => {
-    console.log(e.target.value);
-
     setValues({
       //se usa spreed para sacar todo
       ...values,
@@ -34,22 +40,21 @@ const Checkout = () => {
     };
 
     const orderRef = collection(db, "orders");
-    cart.forEach(element => {
-        const docRef = doc(db, 'productos', element.id)
-        
-        getDoc(docRef).then((doc) => {
-            if(doc.data().stock >= doc.stock){
-                
-            }
-            updateDoc(docRef, {
-                stock: doc.data().stock - doc.stock
-            })
-        })
-        
+    cart.forEach((element) => {
+      const docRef = doc(db, "productos", element.id);
+
+      getDoc(docRef)
+      .then((doc) => {
+        if (doc.data().stock >= element.count) {
+        }
+        updateDoc(docRef, {
+          stock: doc.data().stock - element.count,
+        });
+      });
     });
-    addDoc(orderRef, order).then((res) => {
-      console.log(res.id);
-      setOrderId(res.id);
+    addDoc(orderRef, order).then((doc) => {
+      console.log(doc.id);
+      setOrderId(doc.id);
       emptyCart();
     });
 
@@ -60,11 +65,7 @@ const Checkout = () => {
   }
 
   return (
-    <div>
-      <br></br>
-      <br></br>
-      <br></br>
-      Checkout
+    <div className="checkout">
       <form onSubmit={handleSubmit}>
         <input
           className="form-control"
@@ -91,9 +92,7 @@ const Checkout = () => {
           onChange={handleInputChange}
           autoComplete="off"
         />
-        <button className="btn btn-primery" type="submit">
-          submit
-        </button>
+        <ButtonPrimary text={"Confirmar"} onClick={handleSubmit} />
       </form>
     </div>
   );

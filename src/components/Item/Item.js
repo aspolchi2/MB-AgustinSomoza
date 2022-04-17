@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Button from "../../helpers/Button/Button";
+import MyButton from "../Button/MyButton";
 import { Price } from "../../helpers/Price";
 
 export const Item = ({  id,  name,  price,  desc,  img,  stock,  initial,  category}) => {
@@ -9,7 +9,7 @@ export const Item = ({  id,  name,  price,  desc,  img,  stock,  initial,  categ
     <Card style={{ width: "15rem" }}>
       <Card.Img variant="top" src={img} className="img-fluid"/>
       <Link to={`/detail/${id}`}>
-        <Button text={'Ver detalles'} />
+        <MyButton text={'Ver detalles'} />
       </Link>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
