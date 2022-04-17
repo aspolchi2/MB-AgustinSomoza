@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import ButtonPrimery from "../Button/ButtonPrimary";
+import ButtonPrimary from "../Button/ButtonPrimary";
 
 
 const ItemCount = ({ stock, OnAdd }) => {
@@ -39,7 +39,7 @@ const ItemCount = ({ stock, OnAdd }) => {
       <button className="counter" onClick={() => less()}>
         -
       </button>
-      <ButtonPrimery text={"Agregar al carrito"} onClick={() => OnAdd(count)} className={"addToCartText"} fixed={"addToCartPosition"}/>
+      <ButtonPrimary text={"Agregar al carrito"} onClick={() => OnAdd(count)} className={"addToCartText"} fixed={"addToCartPosition"}/>
       </div>
       
     </div>

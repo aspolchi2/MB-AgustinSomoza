@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import MyButton from "../Button/MyButton";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import { Price } from "../../helpers/Price";
-import ButtonPrimery from "../Button/ButtonPrimary";
+import ButtonPrimary from "../Button/ButtonPrimary";
 
 const ItemDetail = ({
   id,
@@ -54,7 +54,7 @@ const ItemDetail = ({
               <ItemCount stock={stock} OnAdd={addToCart} />
             ) : (
               <Link to={`/cart`}>
-                <ButtonPrimery text="Ver carrito" />
+                <ButtonPrimary text="Ver carrito" />
               </Link>
             )}
           </div>
