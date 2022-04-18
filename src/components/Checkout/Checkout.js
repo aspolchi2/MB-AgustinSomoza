@@ -58,8 +58,15 @@ const Checkout = () => {
       emptyCart();
     });
 
-    console.log(order);
   };
+  if (orderId) {
+    return (
+      <div className="orderSuccesse">
+      <h1>Tu orden se registro correctamente</h1>
+      <h2>Tu orden es {orderId}</h2>
+
+      </div>
+    )}
   if (cart.length === 0) {
     return <Navigate to={"/"} />;
   }

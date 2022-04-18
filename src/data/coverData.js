@@ -1,18 +1,24 @@
 export const coverData = [
   {
     name: "bandoleras",
-    img: "/catalogo_bandoleras.jpg",
-  },
-  {
-    name: "cluchs",
-    img: "/catalogo_cluchs.jpg",
-  },
-  {
-    name: "minibags",
-    img: "/catalogo_minibags.jpg",
+    img: "/bandoleras.png",
   },
   {
     name: "bolsos",
-    img: "/catalogo_bolsos.jpg",
+    img: "/bolsos.png",
   },
+  {
+    name: "minibags",
+    img: "/minibags.png",
+  },
+  {
+    name: "mochilas",
+    img: "/mochilas.png",
+  },
+  {
+    name: "accesorios",
+    img: "/accesorios.png",
+  },
+
+  
 ];

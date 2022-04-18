@@ -7,20 +7,13 @@
   gap: 2rem;
 }
 
-.coverCard {
-  filter: grayscale(100%) brightness(0.9);
-  transition: all 0.5s ease-in-out;
-  -webkit-transition: -webkit-filter 0.325s ease-in-out;
-}
-.coverCard:hover {
-  filter: grayscale(0%) brightness(1);
-  -webkit-filter: grayscale(0%) brightness(1);
-}
+
 .coverMain {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  justify-content: space-around;
+  display: grid;
+  grid-template-areas: 'bandoleras mochilas minibags'
+                        'bolsos mochilas accesorios';
+  justify-content: center;
+  gap: 51px;
 }
 .coverHeaderImg {
   max-height: 100vh;
@@ -44,3 +37,30 @@
   line-height: 1.5rem;
   font-size: 2rem;
 }
+.coverItems img{
+  cursor: pointer;
+  transition: all .35s ease;
+
+}
+.coverItems img:hover{
+  transform: scale(1.1);
+}
+.bandoleras{
+  grid-area: bandoleras;
+}
+.mochilas{
+  grid-area: mochilas;
+  position: relative;
+  top: 4vh;
+}
+.bolsos{
+  grid-area: bolsos;
+}
+.accesorios{
+  grid-area: accesorios;
+}
+.minibags{
+  grid-area: minibags;
+}
+
+

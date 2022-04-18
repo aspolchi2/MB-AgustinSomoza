@@ -26,6 +26,9 @@ const ItemCount = ({ stock, OnAdd }) => {
       setCount(initial);
     }
   };
+  if(stock <= 0){
+    return <p>Sin stock disponible por el momento</p>
+  }
 
   return (
     <div className="ItemCount">

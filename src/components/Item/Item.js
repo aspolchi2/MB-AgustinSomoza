@@ -13,11 +13,15 @@ export const Item = ({  id,  name,  price,  desc,  img,  stock,  initial,  categ
       </Link>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-          <p className="lastStock">{stock > 1 || '¡No te quedes con las ganas!'}</p>
+        {
+          stock !== 0 || <p className="lastStock">Sin stock disponible</p> 
+        }
+
+        
         <Card.Text>
           <Price amount={price} />
           <br></br>
-          <span>Stock disponible :{stock}</span>
+          <span>Stock disponible : {stock}</span>
         </Card.Text>
       </Card.Body>
     </Card>

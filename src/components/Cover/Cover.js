@@ -21,9 +21,9 @@ const Cover = () => {
       </div>
       <div className="coverMain">
         {coverData.map((item, i) => (
-          <div key={i}>
-            <LinkContainer to={`/detail/${item.name}`}>
-              <img src={item.img}></img>
+          <div key={i} className ={`coverItems ${item.name}`}>
+            <LinkContainer to={`/category/${item.name}`}>
+              <img  src={item.img}></img>
             </LinkContainer>
           </div>
         ))}
