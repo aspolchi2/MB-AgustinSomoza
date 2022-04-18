@@ -66,14 +66,12 @@
 
 @media screen and (max-width: 900px) {
   .coverMain {
-    grid-template-areas: 'bandoleras'
-                          'mochilas'
-                          'bolsos'
-                          'accesorios'
-                          'minibags';
+    display: flex;
+    flex-direction: column;
   }
   .coverItems img{
-    width: 100%;
+    width: 80%;
+    margin: auto;
   }
   .coverHeaderText h1 {
     font-size: 2rem;
