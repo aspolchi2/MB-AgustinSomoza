@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import CartWidget from '../CartWidget/CartWidget'
 import { LinkContainer } from 'react-router-bootstrap'
+import { coverData } from '../../data/coverData'
 
 const NavBar = () => {
 
@@ -14,18 +15,12 @@ const NavBar = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto myNav">
-        <LinkContainer to={`/category/bandoleras`}>
-        <Nav.Link >Bandoleras</Nav.Link>
-        </LinkContainer>
-        <LinkContainer to={`/category/minibags`}>
-        <Nav.Link >Minibags</Nav.Link>
-        </LinkContainer>
-        <LinkContainer to={`/category/bolsos`}>
-        <Nav.Link >Bolsos</Nav.Link>
-        </LinkContainer>
-        <LinkContainer to={`/category/otros`}>
-        <Nav.Link >Otros</Nav.Link>
-        </LinkContainer>
+        {coverData.map((item, i) => (
+          <LinkContainer key={i} to={`/category/${item.name}`}>
+            <Nav.Link>{item.name}</Nav.Link>
+          </LinkContainer>
+        ))
+        }
         <CartWidget/>
       </Nav>
     </Navbar.Collapse>

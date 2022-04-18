@@ -2,8 +2,10 @@ import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import Button from "../../helpers/Button/Button";
+import MyButton from "../Button/MyButton";
 import { Price } from "../../helpers/Price";
+import ButtonPrimary from "../Button/ButtonPrimary";
+import { LinkContainer } from "react-router-bootstrap";
 
 const Cart = () => {
   const { cart, cartTotal, emptyCart, removeItem } =
@@ -14,7 +16,7 @@ const Cart = () => {
       <div className="cartIsEmpty">
         <p>Tu carrito esta vacio </p>
         <Link to={"/"}>
-          <Button text={"Ir a la tienda"} />
+          <MyButton text={"Ir a la tienda"} />
         </Link>
       </div>
     );
@@ -33,17 +35,20 @@ const Cart = () => {
               {item.name} {item.count === 1 || `X${item.count}`}
             </h3>
             <Price amount={item.price * item.count} />
-            <Button text={"Eliminar"} onClick={() => removeItem(item.id)} />
+            <MyButton text={"Eliminar"} onClick={() => removeItem(item.id)} />
           </main>
         </article>
       ))}
       <div>
         <Price text={'Total:'} amount={cartTotal()} className={"textAlign"} />
-        <Button
+        <MyButton
           text={"Vaciar Carrito"}
           onClick={emptyCart}
           fixed={"textAlign"}
         />
+        <LinkContainer to={"/checkout"}>
+        <ButtonPrimary text={'Ir al pago'} />
+        </LinkContainer>
       </div>
     </div>
   );

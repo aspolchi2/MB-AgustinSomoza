@@ -1,19 +1,33 @@
 import React, { useEffect } from "react";
+import { LinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 import { coverData } from "../../data/coverData";
+import headerImg from "./header.jpg";
 
 const Cover = () => {
-  const d = document;
-  d.createElement("div");
   return (
     <div className="cover">
-      {coverData.map((item) => (
-        <div className={`${item.name} coverCard`}>
-          <Link to={`/category/${item.name}`}>
-            <img src={item.img} alt={item.name} className="img-fluid" />
-          </Link>
+      <div className="coverHeader">
+        <img
+          src={headerImg}
+          alt="foto de portada"
+          className="img-fluid coverHeaderImg"
+        ></img>
+        <div className="coverHeaderText">
+          <h1>Müssbags</h1>
+          <p>Somos auténticas</p>
+          <p>Somos apasionadas</p>
         </div>
-      ))}
+      </div>
+      <div className="coverMain">
+        {coverData.map((item, i) => (
+          <div key={i} className ={`coverItems ${item.name}`}>
+            <LinkContainer to={`/category/${item.name}`}>
+              <img  src={item.img}></img>
+            </LinkContainer>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

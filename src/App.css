@@ -6,10 +6,12 @@
 @import './components/CartWidget/CartWidget.css';
 @import './components/NavBar/NavBar.css';
 @import './components/Cart/Cart.css';
-@import './helpers/Button/button.css';
+@import './components/Button/button.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import './components/Cover/cover.css';
-@import './components/ItemList/itemList.css';
+@import './components/Button/buttonPrimary.css';
+@import './components/Checkout/checkout.css';
+
 
 :root{
   --color-detail : #e4a9bbbf;

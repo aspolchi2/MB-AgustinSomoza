@@ -10,6 +10,7 @@ import { db } from "./firebase/config";
 import { addDoc, collection } from "firebase/firestore";
 import { fileUpload } from "./firebase/fileUpload";
 import Cover from "./components/Cover/Cover";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   const uploadCaracters = () => {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/detail/:itemId" element={<ItemDetailContainer />} />
           <Route path="/category/:catId" element={<ItemListContainer />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <button onClick={uploadCaracters}>Upload</button>
       </BrowserRouter>

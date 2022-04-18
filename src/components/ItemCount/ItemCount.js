@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import MyButton from "../../helpers/Button/Button";
+import ButtonPrimary from "../Button/ButtonPrimary";
 
 
 const ItemCount = ({ stock, OnAdd }) => {
@@ -15,7 +15,7 @@ const ItemCount = ({ stock, OnAdd }) => {
       MaxStock.current.classList.add("wrong");
       setTimeout(function () {
         MaxStock.current.classList.remove("wrong");
-      }, 0.5 * 1000);
+      }, 500);
       setCount(stock);
     }
   };
@@ -26,6 +26,9 @@ const ItemCount = ({ stock, OnAdd }) => {
       setCount(initial);
     }
   };
+  if(stock <= 0){
+    return <p>Sin stock disponible por el momento</p>
+  }
 
   return (
     <div className="ItemCount">
@@ -39,7 +42,7 @@ const ItemCount = ({ stock, OnAdd }) => {
       <button className="counter" onClick={() => less()}>
         -
       </button>
-      <MyButton text={"Agregar al carrito"} onClick={() => OnAdd(count)} className={"addToCartText"} fixed={"addToCartPosition"}/>
+      <ButtonPrimary text={"Agregar al carrito"} onClick={() => OnAdd(count)} className={"addToCartText"} fixed={"addToCartPosition"}/>
       </div>
       
     </div>

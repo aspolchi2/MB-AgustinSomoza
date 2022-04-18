@@ -1,10 +1,11 @@
-import React from 'react'
-import formatCurrency from './formatCurrency';
+import React from "react";
+import formatCurrency from "./formatCurrency";
 
-export const Price = ({amount, className, text}) => {
-
-    const formatAmount = formatCurrency(amount);
+export const Price = ({ amount, className, text }) => {
+  const formatAmount = formatCurrency(amount);
   return (
-    <span className={`detailPrice ${className}`}>{text} {formatAmount}</span>
-  )
-}
+    <span className={className ? className : "detailPrice"}>
+      {text} {formatAmount}
+    </span>
+  );
+};
