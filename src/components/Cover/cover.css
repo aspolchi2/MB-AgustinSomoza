@@ -64,3 +64,23 @@
 }
 
 
+@media screen and (max-width: 900px) {
+  .coverMain {
+    grid-template-areas: 'bandoleras'
+                          'mochilas'
+                          'bolsos'
+                          'accesorios'
+                          'minibags';
+  }
+  .coverItems img{
+    width: 100%;
+  }
+  .coverHeaderText h1 {
+    font-size: 2rem;
+  }
+  .coverHeaderText p {
+    font-size: 1.5rem;
+  }
+}
+
+
