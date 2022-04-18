@@ -4,3 +4,23 @@
 .orderSuccesse{
     margin-top: 56px;
 }
+.form {
+    padding-top: 10vh;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.myInput{
+    border:none ;
+    border-bottom: 1px solid black;
+}
+.form::target-text{
+    border: none;
+}
+.form div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

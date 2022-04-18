@@ -14,11 +14,13 @@ import ButtonPrimary from "../Button/ButtonPrimary";
 
 const Checkout = () => {
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
-  const [ orderId, setOrderId ] = useState(null);
+  const [orderId, setOrderId] = useState(null);
   const [values, setValues] = useState({
     name: "",
     email: "",
-    tel: "",
+    phone: "",
+    adress: "",
+    zc: "",
   });
 
   const handleInputChange = (e) => {
@@ -43,59 +45,79 @@ const Checkout = () => {
     cart.forEach((element) => {
       const docRef = doc(db, "productos", element.id);
 
-      getDoc(docRef)
-      .then((doc) => {
+      getDoc(docRef).then((doc) => {
         if (doc.data().stock >= element.count) {
         }
         updateDoc(docRef, {
           stock: doc.data().stock - element.count,
-        })
-      })
-    })
+        });
+      });
+    });
     addDoc(orderRef, order).then((doc) => {
       console.log(doc.id);
       setOrderId(doc.id);
       emptyCart();
     });
-
   };
   if (orderId) {
     return (
       <div className="orderSuccesse">
-      <h1>Tu orden se registro correctamente</h1>
-      <h2>Tu orden es {orderId}</h2>
-
+        <h1>Tu orden se registro correctamente</h1>
+        <h2>Tu orden es {orderId}</h2>
       </div>
-    )}
+    );
+  }
   if (cart.length === 0) {
     return <Navigate to={"/"} />;
   }
 
   return (
     <div className="checkout">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className ="form">
+      <div>
         <input
-          className="form-control"
+          className="myInput name"
           type={"text"}
-          placeholder={"tu nombre"}
+          placeholder={"Nombre y apellido"}
           value={values.name}
           name="name"
           onChange={handleInputChange}
           autoComplete="off"
         />
         <input
-          className="form-control"
-          type={"mail"}
+          className="myInput phone"
+          type={"tel"}
+          placeholder={"Numero de telefono"}
+          value={values.tel}
+          name="tel"
+          onChange={handleInputChange}
+          autoComplete="off"
+        />
+        </div>
+        <input
+          className="myInput email"
+          type="email"
+          placeholder={"Tuemail@ejemplo.com"}
           value={values.email}
           name="email"
           onChange={handleInputChange}
           autoComplete="off"
         />
         <input
-          className="form-control"
-          type={"tel"}
-          value={values.tel}
-          name="tel"
+          className="myInput adress"
+          type={"text"}
+          placeholder={"Direccion"}
+          value={values.adress}
+          name="adress"
+          onChange={handleInputChange}
+          autoComplete="off"
+        />
+        <input
+          className="myInput zipCode"
+          type={"number"}
+          placeholder={"Codigo postal"}
+          value={values.zc}
+          name="zc"
           onChange={handleInputChange}
           autoComplete="off"
         />
