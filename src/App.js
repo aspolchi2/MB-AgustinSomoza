@@ -30,7 +30,7 @@ function App() {
           <Route path="/category/:catId" element={<ItemListContainer />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-        {/* <button onClick={uploadCaracters}>Upload</button> */}
+        <button onClick={uploadCaracters}>Upload</button>
       </BrowserRouter>
     </CartProvider>
   );

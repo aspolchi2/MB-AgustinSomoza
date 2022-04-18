@@ -1,10 +1,17 @@
-.infoColor{
-    color: var(--color-detail);
+.item{
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 21%;
 }
-
-.card{
-    border: none;
-    border-radius: 50px;
+.item p{
+   font-size: 1vw;
+   line-height: 1.5rem;
+}
+.itemArticleHeader img {
+    width: auto;
+    height: 50vh;
 }
 .lastStock{
     color: red;

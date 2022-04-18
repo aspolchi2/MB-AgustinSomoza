@@ -9,6 +9,7 @@
 @import './helpers/Button/button.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import './components/Cover/cover.css';
+@import './components/ItemList/itemList.css';
 
 :root{
   --color-detail : #e4a9bbbf;
