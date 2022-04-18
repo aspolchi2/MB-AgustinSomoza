@@ -6,7 +6,7 @@
 }
 .form {
     padding-top: 10vh;
-    width: 40%;
+    width: 35%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -15,12 +15,17 @@
 .myInput{
     border:none ;
     border-bottom: 1px solid black;
+    outline: none;
 }
-.form::target-text{
-    border: none;
-}
+
 .form div{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+@media screen and (max-width: 1200px) {
+    .form {
+        width: 100%;
+        
+    }
+  }

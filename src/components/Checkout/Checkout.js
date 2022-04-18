@@ -11,8 +11,10 @@ import {
 } from "firebase/firestore";
 import { Navigate } from "react-router";
 import ButtonPrimary from "../Button/ButtonPrimary";
+import MyButton from "../Button/MyButton";
 
 const Checkout = () => {
+  
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
   const [values, setValues] = useState({
@@ -103,6 +105,7 @@ const Checkout = () => {
           onChange={handleInputChange}
           autoComplete="off"
         />
+        <div>
         <input
           className="myInput adress"
           type={"text"}
@@ -121,7 +124,9 @@ const Checkout = () => {
           onChange={handleInputChange}
           autoComplete="off"
         />
+        </div>
         <ButtonPrimary text={"Confirmar"} onClick={handleSubmit} />
+        <MyButton text={"Volver"} onClick={() => Navigate(-1)} />
       </form>
     </div>
   );
