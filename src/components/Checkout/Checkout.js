@@ -9,11 +9,14 @@ import {
   updateDoc,
   getDoc,
 } from "firebase/firestore";
-import { Navigate } from "react-router";
 import ButtonPrimary from "../Button/ButtonPrimary";
 import MyButton from "../Button/MyButton";
+import { Navigate, useNavigate } from "react-router";
+
 
 const Checkout = () => {
+  const nav = useNavigate()
+
   
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
@@ -72,7 +75,10 @@ const Checkout = () => {
   if (cart.length === 0) {
     return <Navigate to={"/"} />;
   }
-
+  const handleBack = () => {
+    nav(-1)
+  
+}
   return (
     <div className="checkout">
       <form onSubmit={handleSubmit} className ="form">
@@ -126,7 +132,7 @@ const Checkout = () => {
         />
         </div>
         <ButtonPrimary text={"Confirmar"} onClick={handleSubmit} />
-        <MyButton text={"Volver"} onClick={() => Navigate(-1)} />
+        <MyButton text={"Volver"} onClick={handleBack} />
       </form>
     </div>
   );

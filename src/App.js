@@ -11,6 +11,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { fileUpload } from "./firebase/fileUpload";
 import Cover from "./components/Cover/Cover";
 import Checkout from "./components/Checkout/Checkout";
+import { Navigate } from "react-router";
 
 function App() {
   const uploadCaracters = () => {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/category/:catId" element={<ItemListContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="*" element={<Navigate to={"/"}/>} />
         </Routes>
         {/* <button onClick={uploadCaracters}>Upload</button> */}
       </BrowserRouter>
