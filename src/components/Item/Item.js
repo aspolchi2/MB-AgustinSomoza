@@ -26,7 +26,7 @@ export const Item = ({
           <Price amount={price} />
           <br></br>
           <span>{stock === 0 ? 'Sin stock disponible' : `Stock displinble: ${stock}`}</span>
-           <p className="lastStock">{stock !== 1 || 'Ultimo en Stock'}</p>
+          {stock !== 1 || <p className="lastStock"> Ultimo en Stock</p>}
         </Card.Text>
       </Card.Body>
     </Card>
