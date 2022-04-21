@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
-import MyButton from "../Button/MyButton";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
 import { Price } from "../../helpers/Price";
 import ButtonPrimary from "../Button/ButtonPrimary";
@@ -33,9 +32,9 @@ const ItemDetail = ({
   };
   return (
     <>
-      <div className="ItemDetail">
+      <div className=" container ItemDetail ">
         <div className="item">
-          <img src={imgDescUrl} alt={name} />
+          <img src={imgDescUrl} alt={name} className="img-fluid"/>
         </div>
         <div className="detail">
           <h2 className="detailName">{name}</h2>

@@ -20,7 +20,7 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   align-items:stretch;
   padding: 3rem;
   width: 25vw;

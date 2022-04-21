@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const MyButton = ({ text, onClick, fixed, className, place}) => {
   return (

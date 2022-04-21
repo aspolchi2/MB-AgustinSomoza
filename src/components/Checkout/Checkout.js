@@ -12,11 +12,12 @@ import {
 import ButtonPrimary from "../Button/ButtonPrimary";
 import MyButton from "../Button/MyButton";
 import { Navigate, useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
 
 
 const Checkout = () => {
   const nav = useNavigate()
-
+ const {register, handleSubmit, formState: { errors } } = useForm()
   
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
@@ -25,7 +26,7 @@ const Checkout = () => {
     email: "",
     phone: "",
     adress: "",
-    zc: "",
+    zipCode: "",
   });
 
   const handleInputChange = (e) => {
@@ -37,8 +38,8 @@ const Checkout = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (e) => {
+    // e.preventDefault();
     const order = {
       item: cart,
       total: cartTotal(),
@@ -77,27 +78,29 @@ const Checkout = () => {
   }
   const handleBack = () => {
     nav(-1)
-  
+  console.log(values);
 }
   return (
     <div className="checkout">
-      <form onSubmit={handleSubmit} className ="form">
+      <form onSubmit={handleSubmit(onSubmit)} className ="form">
       <div>
         <input
           className="myInput name"
-          type={"text"}
+          type='text'
           placeholder={"Nombre y apellido"}
-          value={values.name}
+          value={values.name} 
           name="name"
+          {...register('name', { required: true, minLength: 3 })}
           onChange={handleInputChange}
           autoComplete="off"
+          required
         />
         <input
           className="myInput phone"
-          type={"tel"}
+          type='number' 
           placeholder={"Numero de telefono"}
-          value={values.tel}
-          name="tel"
+          value={values.phone}
+          {...register('phone', { required: true, minLength: 10, maxLength: 10 })}
           onChange={handleInputChange}
           autoComplete="off"
         />
@@ -106,34 +109,44 @@ const Checkout = () => {
           className="myInput email"
           type="email"
           placeholder={"Tuemail@ejemplo.com"}
-          value={values.email}
+          value={values.email}  required
           name="email"
           onChange={handleInputChange}
           autoComplete="off"
+         
+
         />
         <div>
         <input
           className="myInput adress"
           type={"text"}
           placeholder={"Direccion"}
-          value={values.adress}
+          value={values.adress}  required
           name="adress"
           onChange={handleInputChange}
           autoComplete="off"
+          
         />
         <input
           className="myInput zipCode"
-          type={"number"}
+          type='text'
           placeholder={"Codigo postal"}
-          value={values.zc}
-          name="zc"
+          value={values.zipCode}  required
+          name="zipCode"
           onChange={handleInputChange}
           autoComplete="off"
+          
+
         />
         </div>
-        <ButtonPrimary text={"Confirmar"} onClick={handleSubmit} />
+        <ButtonPrimary text={"Confirmar"}  />
+        <div className="divError">
+      {errors.phone && <p className="msgError">El numero de telefono es invalido</p>}
+      {errors.name && <p className="msgError">El nombre debe contener 3 o mas caracteres</p>}
+      </div>
         <MyButton text={"Volver"} onClick={handleBack} />
       </form>
+
     </div>
   );
 };

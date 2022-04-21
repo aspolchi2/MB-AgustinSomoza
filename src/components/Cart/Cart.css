@@ -5,7 +5,7 @@
 }
 .cart {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     padding-top: 56px;
     width: 60%;
     margin: auto;
