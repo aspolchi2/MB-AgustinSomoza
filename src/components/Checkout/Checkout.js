@@ -13,12 +13,17 @@ import ButtonPrimary from "../Button/ButtonPrimary";
 import MyButton from "../Button/MyButton";
 import { Navigate, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
-
+import Swal from "sweetalert2";
+import OrderResume from "../OrderResume/OrderResume";
 
 const Checkout = () => {
-  const nav = useNavigate()
- const {register, handleSubmit, formState: { errors } } = useForm()
-  
+  const nav = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
   const [values, setValues] = useState({
@@ -40,6 +45,27 @@ const Checkout = () => {
 
   const onSubmit = (e) => {
     // e.preventDefault();
+    if (
+      !values.name ||
+      !values.email ||
+      !values.phone ||
+      !values.adress ||
+      !values.zipCode
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Por favor completa todos los campos",
+      });
+      return;
+    } else {
+      Swal.fire({
+        icon: "success",
+        title: "Gracias por tu compra",
+        text: "En breve te contactaremos",
+        confirmButtonText: 'Aceptar'
+      });
+    }
     const order = {
       item: cart,
       total: cartTotal(),
@@ -66,87 +92,71 @@ const Checkout = () => {
     });
   };
   if (orderId) {
-    return (
-      <div className="orderSuccesse">
-        <h1>Tu orden se registro correctamente</h1>
-        <h2>Tu orden es {orderId}</h2>
-      </div>
-    );
+    return <OrderResume cart={orderId} />;
   }
   if (cart.length === 0) {
     return <Navigate to={"/"} />;
   }
   const handleBack = () => {
-    nav(-1)
-  console.log(values);
-}
+    nav(-1);
+    console.log(values);
+  };
   return (
     <div className="checkout">
-      <form onSubmit={handleSubmit(onSubmit)} className ="form">
-      <div>
-        <input
-          className="myInput name"
-          type='text'
-          placeholder={"Nombre y apellido"}
-          value={values.name} 
-          name="name"
-          {...register('name', { required: true, minLength: 3 })}
-          onChange={handleInputChange}
-          autoComplete="off"
-          required
-        />
-        <input
-          className="myInput phone"
-          type='number' 
-          placeholder={"Numero de telefono"}
-          value={values.phone}
-          {...register('phone', { required: true, minLength: 10, maxLength: 10 })}
-          onChange={handleInputChange}
-          autoComplete="off"
-        />
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
+        <div>
+          <input
+            className="myInput name"
+            type="text"
+            placeholder={"Nombre y apellido"}
+            value={values.name}
+            name="name"
+            onChange={handleInputChange}
+            autoComplete="off"
+          />
+          <input
+            className="myInput phone"
+            type="number"
+            placeholder={"Numero de telefono"}
+            value={values.phone}
+            name="phone"
+            onChange={handleInputChange}
+            autoComplete="off"
+          />
         </div>
         <input
           className="myInput email"
           type="email"
           placeholder={"Tuemail@ejemplo.com"}
-          value={values.email}  required
+          value={values.email}
           name="email"
           onChange={handleInputChange}
           autoComplete="off"
-         
-
         />
         <div>
-        <input
-          className="myInput adress"
-          type={"text"}
-          placeholder={"Direccion"}
-          value={values.adress}  required
-          name="adress"
-          onChange={handleInputChange}
-          autoComplete="off"
-          
-        />
-        <input
-          className="myInput zipCode"
-          type='text'
-          placeholder={"Codigo postal"}
-          value={values.zipCode}  required
-          name="zipCode"
-          onChange={handleInputChange}
-          autoComplete="off"
-          
-
-        />
+          <input
+            className="myInput adress"
+            type={"text"}
+            placeholder={"Direccion"}
+            value={values.adress}
+            name="adress"
+            onChange={handleInputChange}
+            autoComplete="off"
+          />
+          <input
+            className="myInput zipCode"
+            type="text"
+            placeholder={"Codigo postal"}
+            value={values.zipCode}
+            name="zipCode"
+            onChange={handleInputChange}
+            autoComplete="off"
+          />
         </div>
-        <ButtonPrimary text={"Confirmar"}  />
-        <div className="divError">
-      {errors.phone && <p className="msgError">El numero de telefono es invalido</p>}
-      {errors.name && <p className="msgError">El nombre debe contener 3 o mas caracteres</p>}
-      </div>
+        <ButtonPrimary text={"Confirmar"} />
+        <div className="divError"></div>
         <MyButton text={"Volver"} onClick={handleBack} />
       </form>
-
     </div>
   );
 };
