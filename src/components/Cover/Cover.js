@@ -2,7 +2,6 @@ import React from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { coverData } from "../../data/coverData";
 import { useMobile } from "../../Hooks/useMobile";
-import OrderResume from "../OrderResume/OrderResume";
 import headerImg from "./header.jpg";
 
 const Cover = () => {
@@ -52,7 +51,6 @@ const Cover = () => {
           </div>
         ))}
       </div>
-      <OrderResume></OrderResume>
     </div>
   );
 };
