@@ -12,11 +12,16 @@ import {
 import ButtonPrimary from "../Button/ButtonPrimary";
 import MyButton from "../Button/MyButton";
 import { Navigate, useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 const Checkout = () => {
   const nav = useNavigate();
-  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
@@ -37,7 +42,7 @@ const Checkout = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const onSubmit = (e) => {
     // e.preventDefault();
     if (
       !values.name ||
@@ -86,10 +91,13 @@ const Checkout = () => {
     });
   };
   if (orderId) {
-    <div>
-    
-
-    </div>
+    return (
+   <div className="orderBackground">
+    <h1>Gracias por su compra</h1>
+    <p>Su pedido esta en preparacion</p>
+    <p>Su numero de orden es: <span className="orderIdSpan">{orderId}</span> </p>
+   </div>
+    )
   }
   if (cart.length === 0) {
     return <Navigate to={"/"} />;
@@ -100,7 +108,7 @@ const Checkout = () => {
   };
   return (
     <div className="checkout">
-      <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit(onSubmit)} className="form">
         <div>
           <input
             className="myInput name"

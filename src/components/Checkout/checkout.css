@@ -38,6 +38,25 @@
     
 
 }
+.orderBackground{
+    height: 100vh;
+    background-image: url(/public/backgroundOrder.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    font-size: 2vw;
+    background-position:  80% 50%;
+}
+.orderBackground h1{
+    font-size: 3vw;
+    font-weight: bolder;
+}
+.orderIdSpan{
+    font-weight: bold;
+}
+
 @media screen and (max-width: 1200px) {
     .form {
         width: 100%;
