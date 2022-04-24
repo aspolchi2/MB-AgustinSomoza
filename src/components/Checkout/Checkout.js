@@ -17,11 +17,11 @@ import Swal from "sweetalert2";
 
 const Checkout = () => {
   const nav = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const handleBack = () => {
+    nav(-1);
+    console.log(values);
+  };
+  const { handleSubmit } = useForm();
 
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
@@ -62,7 +62,7 @@ const Checkout = () => {
         icon: "success",
         title: "Gracias por tu compra",
         text: "En breve te contactaremos",
-        confirmButtonText: 'Aceptar'
+        confirmButtonText: "Aceptar",
       });
     }
     const order = {
@@ -92,20 +92,18 @@ const Checkout = () => {
   };
   if (orderId) {
     return (
-   <div className="orderBackground">
-    <h1>Gracias por su compra</h1>
-    <p>Su pedido esta en preparacion</p>
-    <p>Su numero de orden es: <span className="orderIdSpan">{orderId}</span> </p>
-   </div>
-    )
+      <div className="orderBackground">
+        <h1>Gracias por su compra</h1>
+        <p>Su pedido esta en preparacion</p>
+        <p>
+          Su numero de orden es: <span className="orderIdSpan">{orderId}</span>{" "}
+        </p>
+      </div>
+    );
   }
   if (cart.length === 0) {
     return <Navigate to={"/"} />;
   }
-  const handleBack = () => {
-    nav(-1);
-    console.log(values);
-  };
   return (
     <div className="checkout">
       <form onSubmit={handleSubmit(onSubmit)} className="form">
@@ -132,7 +130,7 @@ const Checkout = () => {
         <input
           className="myInput email"
           type="email"
-          placeholder={"Tuemail@ejemplo.com"}
+          placeholder={"ejemplo@ejemplo.com"}
           value={values.email}
           name="email"
           onChange={handleInputChange}

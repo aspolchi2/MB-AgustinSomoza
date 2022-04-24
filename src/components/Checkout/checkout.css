@@ -46,15 +46,16 @@
     justify-content: center;
     align-items: center;
     background-size: cover;
-    font-size: 2vw;
+    font-size: calc(26px /100%);
     background-position:  80% 50%;
 }
 .orderBackground h1{
-    font-size: 3vw;
+    font-size: calc(32px / 100%);
     font-weight: bolder;
 }
 .orderIdSpan{
     font-weight: bold;
+   font-size:  calc(32px / 100%);
 }
 
 @media screen and (max-width: 1200px) {

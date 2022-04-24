@@ -32,7 +32,7 @@ const ItemListContainer = ({category}) => {
         );
       })
       .finally(() => setIsLoading(false));
-  }, [catId]);
+  }, [category, catId]);
   return isLoading ? (
     <div className="loading">
       <Spinner animation="border" />
