@@ -38,6 +38,9 @@
   padding-top: 10vh;
 }
 @media screen and (max-width: 600px) {
+  body{
+    overflow-x: hidden;
+  }
   .ItemDetail{
     display: flex;
     flex-direction: column;
