@@ -6,16 +6,18 @@
   gap: 9rem;
   width: 100%;
 }
-/* .coverHeader{
+.coverHeader{
   height: 100vh;
-} */
+}
 
 .coverMain {
   display: grid;
   grid-template-areas: 'bandoleras mochilas minibags'
                         'bolsos mochilas accesorios';
   justify-content: center;
-  gap: 51px;
+  gap: 5vw;
+  height: 100vh;
+  margin-top: 56px;
 }
 .coverHeaderImg {
   width: 100%;
