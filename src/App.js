@@ -8,7 +8,6 @@ import Cart from "./components/Cart/Cart";
 import Cover from "./components/Cover/Cover";
 import Checkout from "./components/Checkout/Checkout";
 import { Navigate } from "react-router";
-import Footer from "./components/Footer/Footer";
 
 function App() {
   // const uploadCaracters = () => {
@@ -32,7 +31,6 @@ function App() {
           <Route path="*" element={<Navigate to={"/"}/>} />
         </Routes>
         {/* <button onClick={uploadCaracters}>Upload</button> */}
-        <Footer/>
       </BrowserRouter>
     </CartProvider>
   );
