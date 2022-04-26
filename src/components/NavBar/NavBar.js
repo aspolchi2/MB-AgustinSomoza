@@ -2,9 +2,9 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
 import { LinkContainer } from "react-router-bootstrap";
-import { coverData } from "../../data/coverData";
-
+import useFirebase from "../../Hooks/useFirebase";
 const NavBar = () => {
+  const { firebase } = useFirebase("cover");
   return (
     <Navbar className="navBar" bg="light" expand="lg" fixed="top">
       <Container>
@@ -14,7 +14,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto myNav">
-            {coverData.map((item, i) => (
+            {firebase.map((item, i) => (
               <LinkContainer key={i} to={`/category/${item.name}`}>
                 <Nav.Link>{item.name}</Nav.Link>
               </LinkContainer>

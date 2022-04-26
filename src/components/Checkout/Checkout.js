@@ -17,12 +17,10 @@ import Swal from "sweetalert2";
 
 const Checkout = () => {
   const nav = useNavigate();
-  const handleBack = () => {
-    nav(-1);
-    console.log(values);
-  };
-  const { handleSubmit } = useForm();
-
+  const {
+    handleSubmit,
+  } = useForm();
+  
   const { cart, cartTotal, emptyCart } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
   const [values, setValues] = useState({
@@ -32,7 +30,11 @@ const Checkout = () => {
     adress: "",
     zipCode: "",
   });
-
+  const handleBack = () => {
+    nav(-1);
+    console.log(values);
+  };
+  
   const handleInputChange = (e) => {
     setValues({
       //se usa spreed para sacar todo
@@ -130,7 +132,7 @@ const Checkout = () => {
         <input
           className="myInput email"
           type="email"
-          placeholder={"ejemplo@ejemplo.com"}
+          placeholder={"Tuemail@ejemplo.com"}
           value={values.email}
           name="email"
           onChange={handleInputChange}
