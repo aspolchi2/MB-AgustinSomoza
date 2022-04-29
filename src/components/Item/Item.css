@@ -19,6 +19,7 @@
 .imgHover{
     transition: all 0.75s ease-in-out;
     
+    
 }
 .imgHover:hover{
     transform: scale(1.1);
