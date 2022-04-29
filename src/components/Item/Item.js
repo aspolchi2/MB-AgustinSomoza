@@ -22,7 +22,7 @@ export const Item = ({
       </Link>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <Card.Text>
+        <div>
           <Price amount={price} />
           <br></br>
           <span>
@@ -31,7 +31,7 @@ export const Item = ({
               : `Stock displinble: ${stock}`}
           </span>
           {stock !== 1 || <p className="lastStock"> Ultimo en Stock</p>}
-        </Card.Text>
+          </div>
       </Card.Body>
     </Card>
   );

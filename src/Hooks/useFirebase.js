@@ -7,7 +7,10 @@ const useFirebase = (base, cat) => {
   const [isLoading, setIsLoading] = useState(true)
   
   useEffect(() => {
-    setIsLoading(true);
+    setIsLoading(true)
+  
+      
+    
       const docRef = collection(db, base);
       const q = cat ? query(docRef, where ("category", "==", cat)):
       docRef
@@ -20,7 +23,8 @@ const useFirebase = (base, cat) => {
         );
       })
       .finally(setIsLoading(false));
-  }, [base, cat, isLoading]);
+  }, [base, cat]);
+
 
   return { firebase, isLoading };
 };
