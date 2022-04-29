@@ -16,7 +16,7 @@ export const Item = ({
 }) => {
   return (
     <Card style={{ width: "15rem" }}>
-      <Card.Img variant="top" src={img} className="img-fluid" />
+      <Card.Img variant="top" src={img} className="img-fluid imgHover" />
       <Link to={`/detail/${id}`}>
         <MyButton text={"Ver detalles"} />
       </Link>

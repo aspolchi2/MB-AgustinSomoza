@@ -4,7 +4,7 @@ import { db } from "../firebase/config";
 
 const useFirebase = (base, cat) => {
   const [firebase, setFirebase] = useState([]);
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   
   useEffect(() => {
     setIsLoading(true);
