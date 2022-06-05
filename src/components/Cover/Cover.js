@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { useMobile } from "../../Hooks/useMobile";
 import headerImg from "./header.jpg";
@@ -7,6 +7,11 @@ import useFirebase from "../../Hooks/useFirebase";
 const Cover = () => {
   const { isMobile } = useMobile();
   const { firebase } = useFirebase("cover");
+  const [show, setShow] = useState(true)
+  const handleClick = () => {
+    show ? setShow(false) : setShow(true)
+
+  }
 
   if (isMobile === true) {
     return (
@@ -49,6 +54,8 @@ const Cover = () => {
           </div>
         ))}
       </div>
+      <button onClick={handleClick}>{ show ? 'hide this element' : 'show this element'}</button>
+      { show && <p>hide this</p>}
     </div>
   );
 };

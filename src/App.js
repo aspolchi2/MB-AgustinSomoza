@@ -28,7 +28,7 @@ function App() {
           <Route path="/category/:catId" element={<ItemListContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="*" element={<Navigate to={"/"}/>} />
+          <Route path="*" element={<Navigate to={"/"} />} />
         </Routes>
         {/* <button onClick={uploadCaracters}>Upload</button> */}
       </BrowserRouter>

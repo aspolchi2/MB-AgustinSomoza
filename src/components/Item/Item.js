@@ -8,11 +8,8 @@ export const Item = ({
   id,
   name,
   price,
-  desc,
   img,
   stock,
-  initial,
-  category,
 }) => {
   return (
     <Card style={{ width: "15rem" }}>
