@@ -1,19 +1,21 @@
-Müssbags es una marca creada por Sabrina Somoza, donde se especializan en moldear el cuero para crear hermosos accesorios.
+## Müssbags
+Müssbags es una página de marca de carteras creada con ReactJS y utilizando Firebase como base de datos.
 
-La pagina esta siendo creada y modificada por Agustin Somoza Polchi usando ReactJS con lo aprendido en el curso dictado por CODERHOUSE 
+## Instalación
+Clona el repositorio en tu equipo
+bash
 
-A continuacion una lista de lo aplicado: 
-*JSX & Transpiling
-*Componentes
-*Promises, Asincroniay y MAP
-*API
-*Routing y Navegacion
-*Context
-*Eventos
-*Tecnicas de rendering
-*Firebase
-*React-bootstrap
-*React-Router-Dom
+git clone https://github.com/[username]/MB-AgustinSomoza.git
+Instala las dependencias necesarias
 
+#npm install
 
-## ant design 
+Inicia el proyecto
+
+npm start
+## Uso
+Inicia sesión en Firebase
+Crea una nueva base de datos y configura la conexión en el archivo firebase.js
+Agrega productos a la base de datos y verás la página actualizada en tiempo real.
+Contribución
+Si deseas contribuir a este proyecto, por favor haz una solicitud de pull.
